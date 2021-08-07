@@ -1,18 +1,24 @@
+<h1>ToDo List</h1>
 <div class="container">
-  <h1>ToDo List</h1>
-
-  <form (ngSubmit)="onSubmit()">
-    <label for="act">Act</label>
-    <input
-      type="text"
-      id="text"
-      [formControl]="text"
-      placeholder="Insert One..."
-    />
-    <button class="add">Add</button>
+  <form class="form-container" (ngSubmit)="onSubmit()">
+    <div class="form-body">
+      <input
+        class="form-input"
+        type="text"
+        id="text"
+        [formControl]="text"
+        placeholder="Insert One..."
+      />
+      <button class="add"><i class="fas fa-plus"></i></button>
+    </div>
   </form>
 
-  <ul *ngFor="let act of activities; let index = index">
-    <li>{{ index + 1 }} - {{ act }}</li>
-  </ul>
+  <div class="item-list">
+    <ul *ngFor="let item of activities; let index = index">
+      <li>
+        {{ index + 1 }} - {{ item }}
+        <i class="fas fa-times"></i>
+      </li>
+    </ul>
+  </div>
 </div>
