@@ -1,12 +1,18 @@
 <div class="container">
   <h1>ToDo List</h1>
-  <p>
-    <input type="text" [(ngModel)]="act" placeholder="Insert One..." />
-    <button class="add" (click)="addAct()">Add</button>
-  </p>
-  <ul *ngFor="let act of activities">
-    <li>
-      {{ act }}
-    </li>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="act">Act</label>
+    <input
+      type="text"
+      id="text"
+      [formControl]="text"
+      placeholder="Insert One..."
+    />
+    <button class="add">Add</button>
+  </form>
+
+  <ul *ngFor="let act of activities; let index = index">
+    <li>{{ index + 1 }} - {{ act }}</li>
   </ul>
 </div>

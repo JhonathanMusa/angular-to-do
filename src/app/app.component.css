@@ -20,9 +20,15 @@ input[type="text"] {
   color: #fff;
 }
 
+ul{
+  margin: 3px;
+}
+
 ul > li {
   display: inline-block;
   list-style-type: none;
+  
 }
+
 
 

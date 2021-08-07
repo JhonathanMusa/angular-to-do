@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -6,22 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  act = ''
+  text = new FormControl('');
 
   activities = [
     "Work",
     "Eat"
   ]
 
-  addAct() {
-    this.activities.unshift(this.act)
+  onSubmit() {
+    this.activities.push(this.text.value)
   }
 
-  deletAct(act: string) {
+  deletAct(index: number) {
     for (let x = 0; x < this.activities.length; x++)
-      if (this.activities[x] == this.act) {
+      if (this.activities[x] == this.text.value) {
         this.activities.splice(x, 1)
         return
       }
   }
+
+
 }
