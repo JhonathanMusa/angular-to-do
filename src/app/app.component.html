@@ -1,12 +1,13 @@
 <h1>ToDo List</h1>
 <div class="container">
-  <form class="form-container" (ngSubmit)="onSubmit()">
+  <form class="form-container" (ngSubmit)="addTodo()">
     <div class="form-body">
       <input
         class="form-input"
         type="text"
         id="text"
-        [formControl]="text"
+        name="text"
+        [(ngModel)]="text"
         placeholder="Insert One..."
       />
       <button class="add"><i class="fas fa-plus"></i></button>
@@ -16,8 +17,8 @@
   <div class="item-list">
     <ul *ngFor="let item of activities; let index = index">
       <li>
-        {{ index + 1 }} - {{ item }}
-        <i class="fas fa-times"></i>
+        {{ index + 1 }} - {{ item.name }}
+        <i (click)="deleteTodo(item.id)" class="fas fa-times"></i>
       </li>
     </ul>
   </div>

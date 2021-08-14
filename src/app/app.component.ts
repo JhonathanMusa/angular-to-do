@@ -8,24 +8,26 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  text = new FormControl('');
+  text!: string
 
   activities = [
-    "Work",
-    "Eat"
+    { id: 1, name: "Work" },
+    { id: 2, name: "Eat" },
+
   ]
 
-  onSubmit() {
-    this.activities.push(this.text.value)
+  addTodo() {
+    const newItem = { id: Math.random(), name: this.text }
+    this.activities.push(newItem)
+    this.text = ""
   }
 
-  /*  deletAct(index: number) {
-     for (let x = 0; x < this.activities.length; x++)
-       if (this.activities[x] == this.text.value) {
-         this.activities.splice(x, 1)
-         return
-       }
-   } */
-
+  deleteTodo(id: number) {
+    for (let x = 0; x < this.activities.length; x++)
+      if (this.activities[x].id === id) {
+        this.activities.splice(x, 1)
+        return
+      }
+  }
 
 }
