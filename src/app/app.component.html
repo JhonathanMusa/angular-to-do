@@ -18,7 +18,7 @@
     <ul *ngFor="let item of activities; let index = index">
       <li>
         {{ index + 1 }} - {{ item.name }}
-        <i (click)="deleteTodo(item.id)" class="fas fa-times"></i>
+        <i (click)="deleteTodo(item.id)" class="fas fa-times cross"></i>
       </li>
     </ul>
   </div>
