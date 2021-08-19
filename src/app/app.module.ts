@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
