@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Activities } from 'src/activities';
 
 
 @Component({
@@ -10,11 +11,7 @@ export class AppComponent {
   title = "To-Do"
   text!: string
 
-  activities = [
-    { id: 1, name: "Work" },
-    { id: 2, name: "Eat" },
-
-  ]
+  activities: Activities[] = []
 
   addTodo() {
     const newItem = { id: Math.random(), name: this.text }
