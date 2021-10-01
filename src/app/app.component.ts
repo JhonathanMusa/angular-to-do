@@ -20,11 +20,12 @@ export class AppComponent {
   }
 
   deleteTodo(id: number) {
-    for (let x = 0; x < this.activities.length; x++)
-      if (this.activities[x].id === id) {
-        this.activities.splice(x, 1)
+    this.activities.map((act, i) => {
+      if (act.id === id) {
+        this.activities.splice(i, 1)
         return
       }
+    })
   }
 
 }
