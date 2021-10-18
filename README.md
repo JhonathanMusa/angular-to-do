@@ -1,2 +1,2 @@
 # To-do
-To-do project built with Angular
+To-do built with Angular
